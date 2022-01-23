@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import io.github.utilities.PercentageTableColumn?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.diamons.view.PantallaSistema">
+   <children>
+      <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox style="-fx-background-color: #1c313a;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Sistema de registro" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <Button fx:id="buttonClose" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="20" text="" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TabPane fx:id="tabPaneSistema" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab fx:id="tabClientes" text="Clientes">
+                  <content>
+                    <AnchorPane>
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox spacing="20.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="50.0" spacing="10.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="50.0">
+                                                   <children>
+                                                      <TextField fx:id="textFieldBuscarCliente" prefHeight="30.0" prefWidth="250.0" />
+                                                      <HBox alignment="CENTER" maxHeight="30.0" maxWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                                         <children>
+                                                            <FontAwesomeIcon fill="#455a64" glyphName="SEARCH" size="20" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="buttonAgregarCliente" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Agregar">
+                                                   <graphic>
+                                                      <FontAwesomeIcon glyphName="PLUS" />
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="buttonActualizarClientes" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Actualizar">
+                                                   <graphic>
+                                                      <FontAwesomeIcon glyphName="REFRESH" />
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding></HBox>
+                                    <TableView fx:id="tableViewClientes" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                      <columns>
+                                        <PercentageTableColumn fx:id="tableColumnCodigoCliente" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="CÓDIGO" />
+                                        <PercentageTableColumn fx:id="tableColumnNombreCliente" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="NOMBRE" />
+                                        <PercentageTableColumn fx:id="tableColumnTelefonoCliente" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="TELÉFONO" />
+                                        <PercentageTableColumn fx:id="tableColumnDireccionCliente" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="DIRECCIÓN" />
+                                        <PercentageTableColumn fx:id="tableColumnAccionesCliente" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="ACCIONES" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabProveedores" text="Proveedores">
+                  <content>
+                    <AnchorPane>
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox spacing="20.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="50.0" spacing="10.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="50.0">
+                                                   <children>
+                                                      <TextField fx:id="textFieldBuscarProveedor" prefHeight="30.0" prefWidth="250.0" />
+                                                      <HBox alignment="CENTER" maxHeight="30.0" maxWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                                         <children>
+                                                            <FontAwesomeIcon fill="#455a64" glyphName="SEARCH" size="20" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="buttonAgregarProveedor" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Agregar">
+                                                   <graphic>
+                                                      <FontAwesomeIcon glyphName="PLUS" />
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="buttonActualizarProveedores" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Actualizar">
+                                                   <graphic>
+                                                      <FontAwesomeIcon glyphName="REFRESH" />
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <TableView fx:id="tableViewProveedores" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                       <columns>
+                                          <PercentageTableColumn fx:id="tableColumnCodigoProveedor" minWidth="-1.0" percentageWidth="0.1" prefWidth="-1.0" text="CÓDIGO" />
+                                          <PercentageTableColumn fx:id="tableColumnNombreProveedor" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="NOMBRE" />
+                                          <PercentageTableColumn fx:id="tableColumnRfcProveedor" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="RFC" />
+                                          <PercentageTableColumn fx:id="tableColumnTelefonoProveedor" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="TELÉFONO" />
+                                          <PercentageTableColumn fx:id="tableColumnDireccionProveedor" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="DIRECCIÓN" />
+                                          <PercentageTableColumn fx:id="tableColumnAccionesProveedor" minWidth="-1.0" percentageWidth="0.1" prefWidth="-1.0" text="ACCIONES" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabProdutos" text="Productos">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox spacing="20.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="50.0" spacing="10.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="50.0">
+                                                   <children>
+                                                      <TextField fx:id="textFieldBuscarProducto" prefHeight="30.0" prefWidth="250.0" />
+                                                      <HBox alignment="CENTER" maxHeight="30.0" maxWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                                         <children>
+                                                            <FontAwesomeIcon fill="#455a64" glyphName="SEARCH" size="20" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="buttonAgregarProducto" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Agregar">
+                                                   <graphic>
+                                                      <FontAwesomeIcon glyphName="PLUS" />
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="buttonActualizarProductos" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Actualizar">
+                                                   <graphic>
+                                                      <FontAwesomeIcon glyphName="REFRESH" />
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <TableView fx:id="tableViewProductos" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                       <columns>
+                                          <PercentageTableColumn fx:id="tableColumnCodigoProducto" minWidth="-1.0" percentageWidth="0.1" prefWidth="-1.0" text="CÓDIGO" />
+                                          <PercentageTableColumn fx:id="tableColumnDescripcionProducto" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="DESCRIPCIÓN" />
+                                          <PercentageTableColumn fx:id="tableColumnProductoProveedor" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="PROVEEDOR" />
+                                          <PercentageTableColumn fx:id="tableColumnMarcaProducto" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="MARCA" />
+                                          <PercentageTableColumn fx:id="tableColumnStockProducto" minWidth="-1.0" percentageWidth="0.1" prefWidth="-1.0" text="STOCK" />
+                                          <PercentageTableColumn fx:id="tableColumnPrecioProducto" minWidth="-1.0" percentageWidth="0.1" prefWidth="-1.0" text="PRECIO" />
+                                          <PercentageTableColumn fx:id="tableColumnAccionesProducto" minWidth="-1.0" percentageWidth="0.1" prefWidth="-1.0" text="ACCIONES" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

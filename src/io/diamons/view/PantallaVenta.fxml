@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import io.github.utilities.PercentageTableColumn?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane style="-fx-background-color: #1c313a;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.diamons.view.PantallaVenta">
+   <children>
+      <VBox prefHeight="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="50.0" spacing="10.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/icons/cajero.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Punto de venta" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelTicket" text="(ticket)" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <AnchorPane style="-fx-background-color: #f0f0f0;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <HBox spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <AnchorPane style="-fx-background-color: #f0f0f0;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox spacing="15.0" style="-fx-background-color: #f0f0f0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox spacing="10.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <HBox alignment="BOTTOM_CENTER">
+                                       <children>
+                                          <TextField fx:id="textFieldBuscarProducto" prefHeight="30.0" prefWidth="200.0" />
+                                          <HBox alignment="CENTER" maxHeight="30.0" maxWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                             <children>
+                                                <FontAwesomeIcon fill="#455a64" glyphName="SEARCH" size="20" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox>
+                                       <children>
+                                          <Label text="Producto" />
+                                          <TextField fx:id="textFieldProducto" prefHeight="30.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <Label text="Cantidad" />
+                                          <TextField fx:id="textFieldCantidad" prefHeight="30.0" prefWidth="50.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Label text="Precio" />
+                                          <HBox>
+                                             <children>
+                                                <HBox alignment="CENTER" maxHeight="30.0" maxWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#455a64" glyphName="DOLLAR" size="20" />
+                                                   </children>
+                                                </HBox>
+                                                <TextField fx:id="textFiedlPrecio" prefHeight="30.0" prefWidth="50.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding></HBox>
+                              <HBox style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <TableView fx:id="tableViewVentas" maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                      <columns>
+                                        <PercentageTableColumn fx:id="tableColumnCodigoProducto" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="CÓDIGO" />
+                                        <PercentageTableColumn fx:id="tableColumnProducto" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="PRODUCTO" />
+                                          <PercentageTableColumn fx:id="tableColumnCantidadProducto" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="CANTIDAD" />
+                                          <PercentageTableColumn fx:id="tableColumnPrecioUnidad" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="PRECIO U." />
+                                          <PercentageTableColumn fx:id="tableColumnSubtotal" minWidth="-1.0" percentageWidth="0.2" prefWidth="-1.0" text="SUBTOTAL" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding></HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="80.0" spacing="10.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Button fx:id="buttonImprimirRecibo" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/icons/impresora.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="buttonGraficaVenta" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/icons/grafico.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefWidth="300.0">
+                     <children>
+                        <VBox spacing="6.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox spacing="2.0">
+                                 <children>
+                                    <Label text="Cliente:" />
+                                    <HBox spacing="2.0">
+                                       <children>
+                                          <ComboBox fx:id="comboBoxCliente" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="buttoAgregarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0">
+                                             <graphic>
+                                                <FontAwesomeIcon glyphName="PLUS" />
+                                             </graphic></Button>
+                                          <Button fx:id="buttonEditarCliente" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="I">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font></Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Separator prefWidth="200.0" />
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="30.0">
+                                       <children>
+                                          <Label maxWidth="1.7976931348623157E308" text="SubTotal" HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="labelSubTotal" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="\$99.99" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0">
+                                       <children>
+                                          <Label maxWidth="1.7976931348623157E308" text="Descuentos" HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="labelDescuento" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="\$99.99" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0">
+                                       <children>
+                                          <Label maxWidth="1.7976931348623157E308" text="Impuestos" HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="labelImpuesto" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="\$99.99" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0">
+                                       <children>
+                                          <Label maxWidth="1.7976931348623157E308" text="Total" textFill="RED" HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="labelTotal" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="\$99.99" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Separator prefWidth="200.0" />
+                              <HBox>
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" spacing="2.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Pago:" />
+                                          <Label fx:id="labelPago" alignment="CENTER" maxWidth="1.7976931348623157E308" text="\$99.99">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                       </children>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" />
+                                    <VBox maxWidth="1.7976931348623157E308" spacing="2.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Resta:" />
+                                          <Label fx:id="labelResta" alignment="CENTER" maxWidth="1.7976931348623157E308" text="\$99.99" textFill="RED">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0" />
+                              <Label text="Realizar pago:" />
+                              <Button fx:id="buttonCobrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #00e059;" text="Cobrar" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonCancelar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: #ff0000;" text="Cancelar" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
